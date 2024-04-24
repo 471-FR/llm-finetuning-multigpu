@@ -95,11 +95,11 @@ resource "aws_instance" "sd-ec2" {
   tags = {
         Name = "sdelahaies-ec2-tf"
     }
-#   ebs_block_device {
-#     device_name = "/dev/sda1"
-#     volume_size           = "100"
-#     volume_type           = "gp3"
-#      }
+  # ebs_block_device {
+  #    device_name = "/dev/sda1"
+  #    volume_size           = "100"
+  #    volume_type           = "gp3"
+  #     }
   
 }
 

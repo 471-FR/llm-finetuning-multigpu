@@ -29,6 +29,9 @@ The terraform script sets up:
 
 - a key pair that you can use to ssh into the instance.
 
+First `cp user_data.sh.example user_data.sh` and fill in the variables, then
+
+
 ```bash
 terraform init
 terraform plan
