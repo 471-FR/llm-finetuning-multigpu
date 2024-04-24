@@ -100,7 +100,7 @@ resource "aws_instance" "sd-ec2" {
     }
   ebs_block_device {
      device_name = "/dev/sda1"
-     volume_size           = "100"
+     volume_size           = "120"
      volume_type           = "gp3"
       }
   

@@ -54,7 +54,7 @@ class ScriptArguments:
         default=None, metadata={"help": "Model ID to use for SFT training"}
     )
     max_seq_length: int = field(
-        default=512, metadata={"help": "The maximum sequence length for SFT Trainer"}
+        default=2048, metadata={"help": "The maximum sequence length for SFT Trainer"}
     )
 
 
