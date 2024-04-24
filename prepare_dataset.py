@@ -25,6 +25,10 @@ dataset = dataset.map(create_conversation, remove_columns=columns_to_remove,batc
 dataset["train"] = dataset["train"].filter(lambda x: len(x["messages"][1:]) % 2 == 0)
 dataset["test"] = dataset["test"].filter(lambda x: len(x["messages"][1:]) % 2 == 0)
 
+
 # save datasets to disk
 dataset["train"].to_json("dataset/train_dataset.json", orient="records", force_ascii=False)
 dataset["test"].to_json("dataset/test_dataset.json", orient="records", force_ascii=False)
+
+#dataset["train"].split(0.1).to_json("dataset/train_dataset.json", orient="records", force_ascii=False)
+#dataset["test"].split(0.1).to_json("dataset/test_dataset.json", orient="records", force_ascii=False)

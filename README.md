@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ## Finetuning
 
 ```bash
-!ACCELERATE_USE_FSDP=1 FSDP_CPU_RAM_EFFICIENT_LOADING=1 torchrun --nproc_per_node=4 ./scripts/run_fsdp_qlora.py --config llama_3_8B_fsdp_qlora.yaml
+ACCELERATE_USE_FSDP=1 FSDP_CPU_RAM_EFFICIENT_LOADING=1 torchrun --nproc_per_node=4 ./run_fsdp_qlora.py --config ./llama_3_8B_fsdp_qlora.yaml
 ```
 
 You may want to change the `--nproc_per_node` to the number of GPUs you have available. Here the script is set up to use 4 GPUs to use on g5.12xlarge instances on aws.
@@ -55,4 +55,14 @@ TO destroy the instance run:
 
 ```bash
 terraform destroy
+```
+
+# monitoring
+tensorboard can be accessed on the instance, first redirect the port with the following command:
+```bash
+ssh -i myKey.pem -L 6006:localhost:6006 ubuntu@$PUBLIC_IP
+```
+then run tensorboard on the instance with the following command:
+```bash
+tensorboard --logdir llama3llama3-8b-hf-ft 
 ```
