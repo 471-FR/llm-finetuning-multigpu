@@ -29,7 +29,7 @@ from datasets import load_dataset
 # dataset["test"].to_json("dataset/test_dataset.json", orient="records", force_ascii=False)
 
 from huggingface_hub import hf_hub_download
-hf_hub_download(repo_id="sylvain471/episaveur", filename="config.json",repo_type="dataset",local_dir="dataset")
+hf_hub_download(repo_id="sylvain471/episaveur", filename="synth_data.json",repo_type="dataset",local_dir="dataset")
 
 # load synthetic_invoices_reduced_2.json file
 import json
