@@ -11,3 +11,6 @@
 
 # ignore .env files
 .env
+
+# ignore user_data.sh file
+user_data.sh
