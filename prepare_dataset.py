@@ -28,13 +28,15 @@ from datasets import load_dataset
 # dataset["train"].to_json("dataset/train_dataset.json", orient="records", force_ascii=False)
 # dataset["test"].to_json("dataset/test_dataset.json", orient="records", force_ascii=False)
 
-system_message = """You are Llamanalist, an AI assistant to help analysing invoices. You extract information from user input and return a JSON object with the extracted information. You only use infomation provided in the conversation to generate the JSON object."""
+from huggingface_hub import hf_hub_download
+hf_hub_download(repo_id="sylvain471/episaveur", filename="config.json",repo_type="dataset",local_dir="dataset")
 
 # load synthetic_invoices_reduced_2.json file
 import json
 with open("dataset/synth_data.json") as f:
     invoices = json.load(f)
 
+system_message = """You are Llamanalist, an AI assistant to help analysing invoices. You extract information from user input and return a JSON object with the extracted information. You only use infomation provided in the conversation to generate the JSON object."""
 dataset=[]
 for invoice in invoices:
     conversation = {"messages": [{"role": "system", "content": system_message}]}
