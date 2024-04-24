@@ -85,8 +85,11 @@ provider "aws" {
 
 # ec2
 resource "aws_instance" "sd-ec2" {
-  ami           = "ami-054fd176786cbaf84"
+  #ami           = "ami-04f9a173520f395dd"
+  #ami           = "ami-054fd176786cbaf84"  # Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.2.0 (Ubuntu 20.04) 20240420
+  ami           = "ami-086bf045a61bd9170"  # Deep Learning Base OSS Nvidia Driver GPU AMI (Ubuntu 20.04) 20240415
   instance_type = "g5.12xlarge"
+  #instance_type = "t3.xlarge"
   iam_instance_profile = aws_iam_instance_profile.profile-sd-ec2.name
   key_name = aws_key_pair.sd-ec2-keypair.key_name
   vpc_security_group_ids = [aws_security_group.sg-sd-ec2.id]
@@ -95,11 +98,11 @@ resource "aws_instance" "sd-ec2" {
   tags = {
         Name = "sdelahaies-ec2-tf"
     }
-  # ebs_block_device {
-  #    device_name = "/dev/sda1"
-  #    volume_size           = "100"
-  #    volume_type           = "gp3"
-  #     }
+  ebs_block_device {
+     device_name = "/dev/sda1"
+     volume_size           = "100"
+     volume_type           = "gp3"
+      }
   
 }
 

@@ -1,7 +1,7 @@
 # %%writefile llama_3_70b_fsdp_qlora.yaml # uncomment to write from a notebook
 # script parameters
 model_id: "meta-llama/Meta-Llama-3-8B" # Hugging Face model id
-dataset_path: "."                      # path to dataset
+dataset_path: "./dataset"                      # path to dataset
 max_seq_len:  3072 # 2048              # max sequence length for model and packing of the dataset
 # training parameters
 output_dir: "./llama3-8b-hf-ft" # Temporary output directory for model checkpoints
