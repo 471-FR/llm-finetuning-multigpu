@@ -14,3 +14,6 @@
 
 # ignore user_data.sh file
 user_data.sh
+
+# ignore dataset
+dataset/
