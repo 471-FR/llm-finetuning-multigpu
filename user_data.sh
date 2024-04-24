@@ -7,6 +7,8 @@ sudo apt upgrade -y
 sudo apt install mc -y
 sudo apt install python3-venv -y
 
+
+cd /home/ubuntu
 git clone https://github.com/471-FR/llm-finetuning-multigpu.git
 cd llm-finetuning-multigpu
 python3 -m venv venv
