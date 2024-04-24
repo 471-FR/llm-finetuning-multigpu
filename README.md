@@ -51,10 +51,16 @@ chmod 400 myKey.pem
 ssh -i myKey.pem ubuntu@$PUBLIC_IP
 ```
 
-TO destroy the instance run:
+To destroy the instance run:
 
 ```bash
 terraform destroy
+```
+
+also remember to delete the key pair 
+    
+```bash 
+rm -f myKey.pem
 ```
 
 # monitoring
@@ -64,5 +70,5 @@ ssh -i myKey.pem -L 6006:localhost:6006 ubuntu@$PUBLIC_IP
 ```
 then run tensorboard on the instance with the following command:
 ```bash
-tensorboard --logdir llama3llama3-8b-hf-ft 
+tensorboard --logdir llama3-8b-hf-ft 
 ```
