@@ -5,7 +5,7 @@ reference https://www.philschmid.de/fsdp-qlora-llama3
 ## Setup
 
 ```bash
-git clone
+git clone git@github.com:471-FR/llm-finetuning-multigpu.git
 cd llm-finetuning-multigpu
 pip install -r requirements.txt
 ```
